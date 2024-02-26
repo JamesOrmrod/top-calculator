@@ -23,6 +23,10 @@ operButtons.forEach((button) => {
     button.addEventListener('click', (e) => pressOperButton(button));
 })
 
+const decimButton = document.querySelector(".button#decimal");
+
+decimButton.addEventListener('click', () => pressDecimal());
+
 const operators = {
     '+': (a, b) => a + b,
     '-': (a, b) => a - b,
@@ -41,13 +45,26 @@ function pressNumButton(input) {
 }
 
 function pressOperButton(input) {
-    if (inputArray.length > 0 && inputArray.length % 2 != 0) {
+    if (inputArray.length === 1) {
+        inputArray.push(input.textContent); 
+    } else if (inputArray.length === 3) {
+        calculate();
         inputArray.push(input.textContent);
-        updateDisplay();
-    }
-
+    } 
 }
 
+
+function pressDecimal() {
+    if (inputArray.length % 2 === 0) {
+        inputArray.push("0.");
+    } else {
+        // don't allow another decimal if the number already has one
+        if (!(inputArray[inputArray.length - 1].includes("."))) {
+            inputArray[inputArray.length - 1] += ".";
+        }
+    }
+    updateDisplay();
+}
 
 // update the screen display
 function updateDisplay() {
@@ -71,13 +88,11 @@ function calculate() {
     console.log("calculting!")
     let fnArr = inputArray;
 
-
-
     console.log(`arr length = ${fnArr.length}`);
     console.log(`arr length % 2 = ${fnArr.length % 2}`);
     console.log(`valid check = ${validInput(fnArr)}`);
     
-    if (fnArr.length > 2 && (fnArr.length % 2 != 0) && validInput(fnArr)) {
+    if (fnArr.length === 3 && validInput(fnArr)) {
         let num1 = +fnArr[0];
         let oper = fnArr[1];
         let num2 = +fnArr[2];
