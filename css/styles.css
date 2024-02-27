@@ -1,3 +1,4 @@
+
 body {
     display: flex;
     flex-direction: column;
@@ -22,14 +23,16 @@ h1 {
     width: 400px;
     height: 330px;
     font-size: 32px;
+    background-color: rgb(245, 245, 245);
 }
 
 #screen-container {
     display: flex;
     align-items: center;
     padding: 8px;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     border-radius: 4px;
+    background-color: grey;
     margin-bottom: 30px;
 }
 
@@ -37,6 +40,9 @@ h1 {
     margin: 0;
     padding: 0 6px;
     margin-left: auto;
+    font-family: 'Micro 5', sans-serif;
+    font-size: 48px;
+    color: white;
 }
 
 #button-container {
@@ -69,7 +75,7 @@ h1 {
     flex-wrap: wrap;
     flex-basis: 75%;
     justify-content: space-between;
-    align-content: space-around;
+    align-content: space-between;
     padding: 0;
     margin: 0;
 }
@@ -83,7 +89,10 @@ h1 {
 }
 
 button { 
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
+    border:0px;
+    background-color: rgb(208, 208, 208);
+    /* background-color: white; */
     border-radius: 3px;
     box-sizing: border-box;
     width: 80px;
