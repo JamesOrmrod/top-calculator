@@ -4,12 +4,12 @@ body {
     flex-direction: column;
     align-items: center;
     
-    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif
+    font-family: 'Micro 5', 'Roboto', Verdana, Geneva, Tahoma, sans-serif
 
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 96px;
     padding: 30px;
     margin: auto;
 }
@@ -98,6 +98,8 @@ button {
     width: 80px;
     height: 40px;
     text-align: center;
+    font-family:  'Micro 5';
+    font-size: 32px;
 }
 
 #equals {
